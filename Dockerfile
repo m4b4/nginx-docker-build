@@ -15,11 +15,6 @@ RUN apt-get update && apt-get install -y \
 	&& rm -r /var/lib/apt/lists/*
 
 WORKDIR /tmp
-#COPY get-pip.py .
-#COPY POC.py .
-
-#RUN python get-pip.py
-#RUN python -m pip install --trusted-host httplib
 
 RUN wget -O /tmp/nginx-$NGINX_VER.tar.gz -q http://nginx.org/download/nginx-$NGINX_VER.tar.gz \
 	&& tar -zxvf nginx-$NGINX_VER.tar.gz \
